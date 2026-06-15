@@ -17,14 +17,52 @@ customers = pd.read_csv(
 
 N_LEADS = 100000
 
-lead_sources = [
-    "Google Ads",
-    "LinkedIn Ads",
-    "Referral",
-    "Webinar",
-    "Organic Search",
-    "Email Campaign"
-]
+lead_sources = np.random.choice(
+    [
+        "Organic Search",
+        "LinkedIn Ads",
+        "Google Ads",
+        "Referral",
+        "Email Campaign",
+        "Webinar"
+    ],
+    size=N_LEADS,
+    p=[
+        0.30,   # Organic Search
+        0.25,   # LinkedIn
+        0.20,   # Google
+        0.12,   # Referral
+        0.08,   # Email
+        0.05    # Webinar
+    ]
+)
+
+mql_rates = {
+    "Organic Search": 0.55,
+    "LinkedIn Ads": 0.45,
+    "Google Ads": 0.35,
+    "Referral": 0.65,
+    "Email Campaign": 0.30,
+    "Webinar": 0.25
+}
+
+sql_rates = {
+    "Organic Search": 0.70,
+    "LinkedIn Ads": 0.60,
+    "Google Ads": 0.50,
+    "Referral": 0.75,
+    "Email Campaign": 0.45,
+    "Webinar": 0.40
+}
+
+win_rates = {
+    "Organic Search": 0.28,
+    "LinkedIn Ads": 0.22,
+    "Google Ads": 0.18,
+    "Referral": 0.35,
+    "Email Campaign": 0.15,
+    "Webinar": 0.12
+}
 
 industries = [
     "Technology",
@@ -100,28 +138,64 @@ leads = pd.DataFrame({
     )
 })
 
-# ----------------------------------------
+
+# -----------------------------
 # Funnel Logic
-# ----------------------------------------
+# -----------------------------
 
-leads["mql_flag"] = (
-    leads["engagement_score"] >= 60
+# Lead → MQL
+
+leads["mql_flag"] = leads["lead_source"].apply(
+    lambda x: bool(np.random.binomial(1, mql_rates[x]))
 )
 
-leads["sql_flag"] = (
-    leads["engagement_score"] >= 75
+
+# MQL → SQL
+
+leads["sql_flag"] = leads.apply(
+    lambda row: (
+        bool(
+            np.random.binomial(
+                1,
+                sql_rates[row["lead_source"]]
+            )
+        )
+        if row["mql_flag"]
+        else False
+    ),
+    axis=1
 )
 
-leads["converted"] = (
-    leads["engagement_score"] >= 85
+# SQL → Converted
+
+leads["converted"] = leads.apply(
+    lambda row: (
+        bool(
+            np.random.binomial(
+                1,
+                win_rates[row["lead_source"]]
+            )
+        )
+        if row["sql_flag"]
+        else False
+    ),
+    axis=1
 )
+# Lead Status
 
 leads["lead_status"] = np.where(
     leads["converted"],
     "Converted",
-    "Open"
+    np.where(
+        leads["sql_flag"],
+        "SQL",
+        np.where(
+            leads["mql_flag"],
+            "MQL",
+            "Open"
+        )
+    )
 )
-
 # ----------------------------------------
 # Save
 # ----------------------------------------
