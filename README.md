@@ -314,6 +314,38 @@ The platform is structured into four executive dashboards:
 
 ---
 
+# 📖 Project Case Study
+
+## Situation
+
+Revenue leaders lacked a centralized analytics platform capable of monitoring funnel performance, sales effectiveness, customer value, and product contribution across the revenue lifecycle.
+
+## Task
+
+Design an end-to-end Revenue Operations Intelligence Platform capable of consolidating operational data into executive-ready dashboards.
+
+## Action
+
+- Generated realistic RevOps datasets using Python
+- Built a PostgreSQL dimensional warehouse
+- Designed analytical SQL views
+- Created a Power BI semantic model
+- Developed DAX measures and KPIs
+- Built four executive dashboards
+- Implemented dynamic business insights
+
+## Result
+
+Delivered an integrated analytics solution capable of analyzing:
+
+- 100,000 Leads
+- 25,000 Opportunities
+- 10,000 Customers
+- $2.0B Revenue Pipeline
+- $342.8M Revenue
+
+---
+
 # 🔍 SQL Analytics Examples
 
 ### Territory Revenue Analysis
