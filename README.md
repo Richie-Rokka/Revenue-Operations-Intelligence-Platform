@@ -3,18 +3,14 @@
 ## 📌 Project Highlights
 
 - 📈 100,000 Leads Analyzed
+- 🎯 25,000 Opportunities Evaluated
+- 👥 10,000 Customers Modeled
 - 💰 $2.0B Revenue Pipeline
 - 🏆 $342.8M Revenue Generated
-- 👥 10,000 Customers
-- 🎯 17.0% Win Rate
 - 📊 4 Executive Dashboards
+- ⚡ PostgreSQL Data Warehouse
+- 📈 Power BI Executive Analytics Platform
 
-
-<p align="center">
-  <img src="assets/architecture.png" width="850">
-</p>
-
-<p align="center">
 
 ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Data%20Warehouse-336791?logo=postgresql&logoColor=white)
@@ -45,6 +41,31 @@ The solution enables executives to:
 ✅ Assess product contribution to revenue
 
 ✅ Support data-driven revenue decisions
+
+---
+
+# 🎯 Business Impact
+
+The Revenue Operations Intelligence Platform provides a single source of truth across Marketing, Sales, and Customer Intelligence.
+
+The solution enables revenue leaders to:
+
+- Identify funnel leakage across the Lead → MQL → SQL → Won lifecycle
+- Evaluate sales rep productivity and conversion effectiveness
+- Benchmark territory-level performance
+- Understand customer and product revenue concentration
+- Monitor executive KPIs through interactive dashboards
+
+## Outcomes Delivered
+
+| Metric | Value |
+|---------|---------:|
+| Leads Analyzed | 100,000 |
+| Opportunities Evaluated | 25,000 |
+| Customers Modeled | 10,000 |
+| Revenue Pipeline | $2.0B |
+| Revenue Generated | $342.8M |
+| Win Rate | 17.0% |
 
 ---
 
@@ -86,6 +107,38 @@ Power BI Semantic Model
 Executive Analytics Platform
 ```
 
+# 🗄️ Data Model
+
+<p align="center">
+  <img src="assets/data_model.png" width="1000">
+</p>
+
+The platform follows a Star Schema design optimized for analytical reporting and time intelligence calculations.
+
+### Fact Tables
+
+| Table | Purpose |
+|---------|---------|
+| fact_leads | Lead generation and funnel activity |
+| fact_opportunities | Revenue and pipeline tracking |
+
+### Dimension Tables
+
+| Table | Purpose |
+|---------|---------|
+| dim_customer | Customer attributes |
+| dim_product | Product catalog |
+| dim_sales_rep | Sales representative information |
+| dim_date | Time intelligence and reporting calendar |
+
+### Model Design Principles
+
+- Star Schema architecture
+- Single-direction filtering
+- Optimized DAX performance
+- Time intelligence enabled
+- Scalable analytical structure
+
 ---
 
 # ⚙️ Technology Stack
@@ -103,25 +156,38 @@ Executive Analytics Platform
 
 ---
 
-# 🗄️ Data Warehouse Design
+# 🛠 Skills Demonstrated
 
-## Fact Tables
+### Revenue Operations
 
-| Table | Description |
-|---------|-------------|
-| fact_leads | Lead generation and marketing funnel data |
-| fact_opportunities | Pipeline, revenue, and sales performance |
+- Revenue Analytics
+- Funnel Performance Analysis
+- Pipeline Management
+- Conversion Optimization
+- Territory Performance
 
----
+### Business Intelligence
 
-## Dimension Tables
+- Executive KPI Reporting
+- Dashboard Development
+- Data Visualization
+- Insight Generation
 
-| Table | Description |
-|---------|-------------|
-| dim_customer | Customer attributes |
-| dim_product | Product catalog |
-| dim_sales_rep | Sales representatives |
-| dim_date | Time intelligence |
+### Data Engineering
+
+- ETL Development
+- PostgreSQL
+- SQL Analytics
+- Data Warehousing
+- Dimensional Modeling
+
+### Power BI
+
+- DAX
+- Time Intelligence
+- Star Schema Design
+- Dynamic Insights
+- Performance Optimization
 
 ---
 
@@ -248,6 +314,73 @@ The platform is structured into four executive dashboards:
 
 ---
 
+# 🔍 SQL Analytics Examples
+
+### Territory Revenue Analysis
+
+```sql
+SELECT
+    territory,
+    SUM(actual_revenue) AS revenue
+FROM fact_opportunities
+WHERE won = TRUE
+GROUP BY territory
+ORDER BY revenue DESC;
+```
+
+### Funnel Conversion Analysis
+```
+SELECT
+    lead_source,
+    COUNT(*) AS leads,
+    SUM(CASE WHEN mql_flag THEN 1 ELSE 0 END) AS mqls,
+    SUM(CASE WHEN sql_flag THEN 1 ELSE 0 END) AS sqls,
+    SUM(CASE WHEN converted THEN 1 ELSE 0 END) AS converted
+FROM fact_leads
+GROUP BY lead_source;
+```
+
+---
+
+# ⚡DAX Measure Examples
+
+### Win Rate
+
+```DAX
+Win Rate =
+DIVIDE(
+    [Won Deals],
+    [Total Opportunities]
+)
+```
+
+### Average Deal Size
+```
+Average Deal Size =
+DIVIDE(
+    [Total Revenue],
+    [Won Deals]
+)
+```
+### Revenue YoY %
+```
+Revenue YoY % =
+DIVIDE(
+    [Total Revenue] - [Revenue LY],
+    [Revenue LY]
+)
+```
+### Lead → Won Conversion
+```
+Lead to Won Conversion % =
+DIVIDE(
+    [Won Deals],
+    [Total Leads]
+)
+```
+---
+
+
 # 📈 Revenue Funnel Summary
 
 | Metric | Value |
@@ -330,14 +463,13 @@ Revenue-Operations-Intelligence-Platform/
 │   ├── page3.png
 │   └── page4.png
 │
-├── data/
-│   ├── raw/
-│   └── processed/
+├── dashboard/
+│   └── Revenue_Operations_Intelligence.pbix
 │
 ├── sql/
 │   ├── schema.sql
-│   ├── views/
-│   └── kpis/
+│   ├── create_views.sql
+│   └── revenue_kpis.sql
 │
 ├── src/
 │   ├── generate_customers.py
@@ -345,8 +477,9 @@ Revenue-Operations-Intelligence-Platform/
 │   ├── generate_opportunities.py
 │   └── etl/
 │
-├── dashboard/
-│   └── Revenue_Operations_Intelligence.pbix
+├── data/
+│   ├── raw/
+│   └── processed/
 │
 ├── requirements.txt
 └── README.md
@@ -372,9 +505,9 @@ Revenue-Operations-Intelligence-Platform/
 
 Business Intelligence • Revenue Analytics • Commercial Intelligence • Data Analytics
 
-🔗 LinkedIn: 
+🔗 LinkedIn: [www.linkedin.com/in/abodunrin-oketade](http://www.linkedin.com/in/abodunrin-oketade)
 
-🔗 GitHub: 
+🔗 GitHub: https://github.com/Richie-Rokka
 
 ---
 
