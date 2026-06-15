@@ -10,12 +10,6 @@
 - 📊 4 Executive Dashboards
 
 
-<p align="center">
-  <img src="assets/architecture.png" width="850">
-</p>
-
-<p align="center">
-
 ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Data%20Warehouse-336791?logo=postgresql&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-ETL%20%26%20Data%20Generation-3776AB?logo=python&logoColor=white)
@@ -122,6 +116,12 @@ Executive Analytics Platform
 | dim_product | Product catalog |
 | dim_sales_rep | Sales representatives |
 | dim_date | Time intelligence |
+
+
+<p align="center">
+  <img src="assets/data_model.png" width="1000">
+</p>
+
 
 ---
 
@@ -372,9 +372,9 @@ Revenue-Operations-Intelligence-Platform/
 
 Business Intelligence • Revenue Analytics • Commercial Intelligence • Data Analytics
 
-🔗 LinkedIn: 
+🔗 LinkedIn: [www.linkedin.com/in/abodunrin-oketade](http://www.linkedin.com/in/abodunrin-oketade)
 
-🔗 GitHub: 
+🔗 GitHub: https://github.com/Richie-Rokka
 
 ---
 
