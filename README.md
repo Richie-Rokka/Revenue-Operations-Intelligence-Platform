@@ -26,24 +26,18 @@ Built with **Python, PostgreSQL, SQL, Power BI, and DAX**, the platform provides
 
 ## Executive Performance Overview
 
-![Executive Performance Overview](assets/page1.png)
-
 <img src="assets/page1.png" alt="Executive Performance Overview Dashboard" width="100%">
 
 ## Funnel Performance & Conversion Analytics
 
-![Funnel Performance & Conversion Analytics](assets/page2.png)
 <img src="assets/page2.png" alt="Funnel Performance & Conversion Analytics Dashboard" width="100%">
 
 ## Sales Performance & Territory Intelligence
 
-![Sales Performance & Territory Intelligence](assets/page3.png)
 <img src="assets/page3.png" alt="Sales Performance & Territory Intelligence Dashboard" width="100%">
-
 
 ## Product & Customer Intelligence
 
-![Product & Customer Intelligence](assets/page4.png)
 <img src="assets/page4.png" alt="Product & Customer Intelligence Dashboard" width="100%">
 
 ---
