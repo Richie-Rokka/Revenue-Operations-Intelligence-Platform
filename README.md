@@ -28,17 +28,23 @@ Built with **Python, PostgreSQL, SQL, Power BI, and DAX**, the platform provides
 
 ![Executive Performance Overview](assets/page1.png)
 
+<img src="assets/page1.png" alt="Executive Performance Overview Dashboard" width="100%">
+
 ## Funnel Performance & Conversion Analytics
 
 ![Funnel Performance & Conversion Analytics](assets/page2.png)
+<img src="assets/page2.png" alt="Funnel Performance & Conversion Analytics Dashboard" width="100%">
 
 ## Sales Performance & Territory Intelligence
 
 ![Sales Performance & Territory Intelligence](assets/page3.png)
+<img src="assets/page3.png" alt="Sales Performance & Territory Intelligence Dashboard" width="100%">
+
 
 ## Product & Customer Intelligence
 
 ![Product & Customer Intelligence](assets/page4.png)
+<img src="assets/page4.png" alt="Product & Customer Intelligence Dashboard" width="100%">
 
 ---
 
@@ -96,7 +102,7 @@ Power BI Semantic Model
 Executive Analytics & Insights
 ```
 
-![Platform Architecture](assets/architecture.png)
+<img src="assets/architecture.png" alt="Revenue Operations Intelligence Platform Architecture" width="100%">
 
 The architecture separates data generation, storage, analytics, semantic modeling, and visualization into distinct layers.
 
@@ -106,7 +112,7 @@ The architecture separates data generation, storage, analytics, semantic modelin
 
 The platform uses a **star schema** designed for analytical reporting and Power BI performance.
 
-![Data Model](assets/data_model.png)
+<img src="assets/data_model.png" alt="Revenue Operations Intelligence Platform Data Model" width="100%">
 
 ## Fact Tables
 
